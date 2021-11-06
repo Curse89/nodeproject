@@ -1,0 +1,11 @@
+FROM node:14.0.0-alpine
+
+WORKDIR /usr/src/app
+
+COPY  package*.json ./
+
+RUN yarn config set ignore-engines true
+
+RUN npm install
+
+COPY . .
